@@ -10,7 +10,16 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
-                //this.getView().byId("page").bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
+                var counter = 1.
+                this.getView().byId("KundeGroup").bindElement("/Accounts('713')");
+                this.getView().byId("SFTel").bindElement("/AccountAddressDependentPhones(AccountID='713',AddressID='26505',SequenceNo='001')");
+                this.getView().byId("SFMail").bindElement("/AccountAddressDependentEmails(AccountID='713',AddressID='26505',SequenceNo='001')");
+                this.getView().byId("AddresseGroup").bindElement("/AccountAddresses(AccountID='713',AddressID='26505')")
+            },
+            handleEditToggled: function () {
+                if (counter != 1) {
+                    
+                }
             }
         });
     });
