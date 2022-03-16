@@ -18,40 +18,45 @@
                         <smartForm:SmartForm id="smartForm"
                             app:defaultCheckBoxDisplayBehaviour="OnOff"
                             app:defaultDropDownDisplayBehaviour="idAndDescription"
-                            editTogglable="true" editToggled="handleEditToggled" title="{Name}">
-                            <smartForm:Group id="AddresseGroup" label="Addresse">
-                                <smartForm:GroupElement id="GrElStadt" label="Stadt">
-                                    <smartField:SmartField id="SFStadt" value="{City}" />
+                            editTogglable="true" editToggled="handleEditToggled" title="{i18n>NameDaten}">
+                            <smartForm:Group id="KundeGroup" label="{i18n>DatenGr}">
+                                <smartForm:GroupElement id="GrElName" label="{i18n>Name}">
+                                    <smartField:SmartField id="SFName" value="{Name}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElPLZ" label="PLZ">
+                                <smartForm:GroupElement id="GrElTel" label="{i18n>Tel}">
+                                    <smartField:SmartField id="SFTel" value="{Tel}" />
+                                </smartForm:GroupElement>
+                                <smartForm:GroupElement id="GrElMail" label="{i18n>Mail}">
+                                    <smartField:SmartField id="SFMail" value="{Mail}" />
+                                </smartForm:GroupElement>
+                            </smartForm:Group>
+                            <smartForm:Group id="AddresseGroup" label="{i18n>AddresseGr}">
+                                <smartForm:GroupElement id="GrElStadt" label="{i18n>Stadt}">
+                                    <smartField:SmartField id="SFStadt" value="{Accounts('713')/AccountAddresses/City}" />
+                                </smartForm:GroupElement>
+                                <smartForm:GroupElement id="GrElPLZ" label="{i18n>PLZ}">
                                     <smartField:SmartField id="SFPLZ" value="{PostalCode}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElStrasse" label="Strasse">
+                                <smartForm:GroupElement id="GrElStrasse" label="{i18n>Strasse}">
                                     <smartField:SmartField id="SFStrasse" value="{Street}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElNr" label="Nr">
+                                <smartForm:GroupElement id="GrElNr" label="{i18n>Nr}">
                                     <smartField:SmartField id="SFNr" value="{HouseNo}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElLandID" label="Land(Kurz)">
+                                <smartForm:GroupElement id="GrElLandID" label="{i18n>LandID}">
                                     <smartField:SmartField id="SFLandID" value="{CountryID}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElLand" label="Land">
+                                <smartForm:GroupElement id="GrElLand" label="{i18n>Land}">
                                     <smartField:SmartField id="SFLand" value="{CountryName}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElZz" label="Zeitzone">
+                                <smartForm:GroupElement id="GrElZz" label="{i18n>Zeitzone}">
                                     <smartField:SmartField id="SFzz" value="{TimeZone}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElSprache" label="Sprache">
+                                <smartForm:GroupElement id="GrElSprache" label="{i18n>Sprache}">
                                     <smartField:SmartField id="SFSprache" value="{LanguageID}" />
                                 </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElKf" label="Kurzform">
+                                <smartForm:GroupElement id="GrElKf" label="{i18n>Kurzform}">
                                     <smartField:SmartField id="SFKf" value="{ShortForm}" />
-                                </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElAccountID" label="AccountID">
-                                    <smartField:SmartField id="SFAccountID" value="{AccountID}" />
-                                </smartForm:GroupElement>
-                                <smartForm:GroupElement id="GrElAddressID" label="AddressID">
-                                    <smartField:SmartField id="SFAddressID" value="{AddressID}" />
                                 </smartForm:GroupElement>
                             </smartForm:Group>
 		                </smartForm:SmartForm>
