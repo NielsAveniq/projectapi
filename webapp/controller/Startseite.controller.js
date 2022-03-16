@@ -10,8 +10,7 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
-                /*var oForm = this.getView().byId("smartform");
-                oForm.bindElement("/AccountAddresses(AccountID='42',AddressID='23980')");*/
+                //this.getView().byId("page").bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
             }
         });
     });
