@@ -15,10 +15,12 @@
             <pages>
                 <Page id="page" title="{i18n>title}">
                     <content>
+                        <!--Smartform, Daten des Kunden schön gegliedert darstellen-->
                         <smartForm:SmartForm id="smartForm"
                             app:defaultCheckBoxDisplayBehaviour="OnOff"
                             app:defaultDropDownDisplayBehaviour="idAndDescription"
                             editTogglable="true" editToggled="handleEditToggled" title="{i18n>NameDaten}">
+                            <!--Smartfrom Group, trennt Name, Telefon, Mail, etc. von der Adresse-->
                             <smartForm:Group id="KundeGroup" label="{i18n>DatenGr}">
                                 <smartForm:GroupElement id="GrElName" label="{i18n>FirstName}">
                                     <smartField:SmartField id="SFName" value="{FirstName}" />
@@ -33,6 +35,7 @@
                                     <smartField:SmartField id="SFMail" value="{Email}" />
                                 </smartForm:GroupElement>
                             </smartForm:Group>
+                            <!--Smartform Group Adresse-->
                             <smartForm:Group id="AddresseGroup" label="{i18n>AddresseGr}">
                                 <smartForm:GroupElement id="GrElStadt" label="{i18n>Stadt}">
                                     <smartField:SmartField id="SFStadt" value="{AddressInfo/City}" />
