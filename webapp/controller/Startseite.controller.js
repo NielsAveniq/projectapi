@@ -10,15 +10,18 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
-                var counter = 1.
+                var counter = 1;
                 this.getView().byId("KundeGroup").bindElement("/Accounts('713')");
                 this.getView().byId("SFTel").bindElement("/AccountAddressDependentPhones(AccountID='713',AddressID='26505',SequenceNo='001')");
                 this.getView().byId("SFMail").bindElement("/AccountAddressDependentEmails(AccountID='713',AddressID='26505',SequenceNo='001')");
                 this.getView().byId("AddresseGroup").bindElement("/AccountAddresses(AccountID='713',AddressID='26505')")
             },
             handleEditToggled: function () {
-                if (counter != 1) {
-                    
+                if (counter == 0) {
+                    counter=1;
+                    sap.m.MessageToast.show("This message should appear in the message toast", {});
+                }else{
+                    counter=0;
                 }
             }
         });
