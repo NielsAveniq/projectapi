@@ -33,6 +33,13 @@ sap.ui.define([
             },
     
             handleCancelPress : function () {
+                //Restore the data
+			    //var oModel = this.getView().getModel();
+			    //var oData = oModel.getData();
+
+			    //oData.SupplierCollection[0] = this._oSupplier;
+
+			    //oModel.setData(oData);
                 this._toggleButtonsAndView(false);
             },
     
