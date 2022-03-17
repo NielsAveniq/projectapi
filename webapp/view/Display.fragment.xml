@@ -24,16 +24,14 @@
 			<f:content>
 				<Label text="{i18n>Stadt}" />
 				<Text id="cityText" text="{AddressInfo/City}" />
-				<Label text="{i18n>StrasseNr}." />
-				<Text text="{Street} {HouseNumber}" />
+				<Label text="{i18n>StrasseNr}" />
+				<Text text="{AddressInfo/Street} {AddressInfo/HouseNo}" />
 				<Label text="{i18n>PLZ}" />
 				<Text text="{AddressInfo/PostalCode}" />
 				<Label text="{i18n>Land}" />
 				<Text id="landText" text="{AddressInfo/CountryName}" />
                 <Label text="{i18n>Sprache}" />
 				<Text id="spracheText" text="{AddressInfo/LanguageID}" />
-                <Label text="{i18n>Kurzform}" />
-				<Text id="kurzformText" text="{AddressInfo/Shortform}" />
 			</f:content>
 		</f:SimpleForm>
 	</VBox>
