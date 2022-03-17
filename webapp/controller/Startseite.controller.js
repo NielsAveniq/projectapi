@@ -18,11 +18,11 @@ sap.ui.define([
                 oModel.attachRequestCompleted(function() {
                     this.byId('edit').setEnabled(true);
                 }.bind(this));
-			    this.getView().setModel(oModel);
 
 			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
 
 			    this._formFragments = {};
+
                 // Set the initial form to be the display one
 			    this._showFormFragment("Display");
             },
