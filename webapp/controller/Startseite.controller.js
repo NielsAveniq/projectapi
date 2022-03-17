@@ -16,6 +16,9 @@ sap.ui.define([
                 this.getView().byId("SFTel").bindElement("/AccountAddressDependentPhones(AccountID='713',AddressID='26505',SequenceNo='001')");
                 this.getView().byId("SFMail").bindElement("/AccountAddressDependentEmails(AccountID='713',AddressID='26505',SequenceNo='001')");
                 this.getView().byId("AddresseGroup").bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
+
+                // Set the initial form to be the display one
+			this._showFormFragment("Display");
             }
         });
     });

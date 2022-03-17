@@ -1,0 +1,40 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox id="dispVbox" class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay354"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>Stadt}" />
+				<Text id="cityText" text="{AddressInfo/City}" />
+				<Label text="{i18n>StrasseNr}." />
+				<Text text="{Street} {HouseNumber}" />
+				<Label text="{i18n>PLZ}" />
+				<Text text="{AddressInfo/PostalCode}" />
+				<Label text="{i18n>Land}" />
+				<Text id="landText" text="{AddressInfo/CountryName}" />
+                <Label text="{i18n>Sprache}" />
+				<Text id="spracheText" text="{AddressInfo/LanguageID}" />
+                <Label text="{i18n>Kurzform}" />
+				<Text id="kurzformText" text="{AddressInfo/Shortform}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>

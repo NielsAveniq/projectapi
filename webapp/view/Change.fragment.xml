@@ -1,0 +1,55 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+	<VBox id="changeVbox" class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormChange354"
+			editable="true"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>Stadt}" />
+				<Input id="stadtInput" value="{AddressInfo/City}" />
+
+				<Label text="{i18n>StrasseNr}" />
+				<Input value="{AddressInfo/Street}">
+				</Input>
+				<Input value="{AddressInfo/HouseNo}">
+					<layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData>
+				</Input>
+
+				<Label text="{i18n>PLZ}" />
+				<Input value="{AddressInfo/PostalCode}" />
+
+				<Label text="{i18n>Land}" />
+				<Input id="landInput" value="{AddressInfo/CountryName}" editable="false" />
+
+                <Label text="{i18n>Sprache}" />
+				<Select id="l" selectedKey="{AddressInfo/LanguageID}">
+					<items>
+						<core:Item text="{i18n>Deutsch}" key="DE"/>
+						<core:Item text="{i18n>Englisch}" key="EN"/>
+						<core:Item text="{i18n>Italienisch}" key="IT"/>
+						<core:Item text="{i18n>Französisch}" key="FR"/>
+					</items>
+				</Select>
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>
