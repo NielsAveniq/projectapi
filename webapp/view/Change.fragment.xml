@@ -26,27 +26,27 @@
 				<Input id="stadtInput" value="{AddressInfo/City}" />
 
 				<Label text="{i18n>StrasseNr}" />
-				<Input value="{AddressInfo/Street}">
+				<Input id="strasseInput" value="{AddressInfo/Street}">
 				</Input>
-				<Input value="{AddressInfo/HouseNo}">
+				<Input id="nrInput" value="{AddressInfo/HouseNo}">
 					<layoutData>
 						<l:GridData span="XL1 L2 M2 S4" />
 					</layoutData>
 				</Input>
 
 				<Label text="{i18n>PLZ}" />
-				<Input value="{AddressInfo/PostalCode}" />
+				<Input id="plzInput" value="{AddressInfo/PostalCode}" />
 
 				<Label text="{i18n>Land}" />
 				<Input id="landInput" value="{AddressInfo/CountryName}" editable="false" />
 
                 <Label text="{i18n>Sprache}" />
-				<Select id="l" selectedKey="{AddressInfo/LanguageID}">
+				<Select id="spracheInput" selectedKey="{AddressInfo/LanguageID}">
 					<items>
-						<core:Item text="{i18n>Deutsch}" key="DE"/>
-						<core:Item text="{i18n>Englisch}" key="EN"/>
-						<core:Item text="{i18n>Italienisch}" key="IT"/>
-						<core:Item text="{i18n>Französisch}" key="FR"/>
+						<core:Item text="{i18n>Deutsch}" key="D"/>
+						<core:Item text="{i18n>Englisch}" key="E"/>
+						<core:Item text="{i18n>Italienisch}" key="I"/>
+						<core:Item text="{i18n>Französisch}" key="F"/>
 					</items>
 				</Select>
 			</f:content>

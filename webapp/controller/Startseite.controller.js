@@ -13,12 +13,7 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
-                // set explored app's demo model on this sample
-			    var oModel = new JSONModel(sap.ui.require.toUrl("sap/opu/odata/sap/ERP_ISU_UMC/"));
-                oModel.attachRequestCompleted(function() {
-                    this.byId('edit').setEnabled(true);
-                }.bind(this));
-
+                //Binding
 			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
 
 			    this._formFragments = {};
@@ -28,22 +23,36 @@ sap.ui.define([
             },
 
             handleEditPress : function () {
-			    //this._oAddress = Object.assign({}, this.getView().getModel().getData());
                 this._toggleButtonsAndView(true);
             },
     
             handleCancelPress : function () {
-                //Restore the data
-			    //var oModel = this.getView().getModel();
-			    //var oData = oModel.getData();
-
-			    //oData.SupplierCollection[0] = this._oSupplier;
-
-			    //oModel.setData(oData);
                 this._toggleButtonsAndView(false);
             },
     
             handleSavePress : function () {
+                var oInput = {};
+                oInput.AccountID = "713";
+                oInput.AddressID = "26505";
+                oInput.AddressInfo = {
+                    City: this.getView().byId("stadtInput").getValue(), 
+                    PostalCode: this.getView().byId("plzInput").getValue(), 
+                    Street: this.getView().byId("strasseInput").getValue(), 
+                    HouseNo: this.getView().byId("nrInput").getValue(), 
+                    CountryID: "CH", 
+                    TimeZone: "CET", 
+                    LanguageID: this.getView().byId("spracheInput").getSelectedKey()
+                };
+                
+                this.getView().getModel().update("/AccountAddresses", oInput, {
+                    method: "PUT",
+                    success: function(data) {
+                     alert("success");
+                    },
+                    error: function(e) {
+                     alert("error");
+                    }
+                   });
                 this._toggleButtonsAndView(false);
             },
     
