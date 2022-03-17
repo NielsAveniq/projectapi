@@ -14,7 +14,7 @@ sap.ui.define([
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
                 //Binding
-			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
+			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26837')");
 
 			    this._formFragments = {};
 
@@ -33,7 +33,7 @@ sap.ui.define([
             handleSavePress : function () {
                 var oInput = {};
                 oInput.AccountID = "713";
-                oInput.AddressID = "26505";
+                oInput.AddressID = "26837";
                 oInput.AddressInfo = {
                     City: this.getView().byId("stadtInput").getValue(), 
                     PostalCode: this.getView().byId("plzInput").getValue(), 
@@ -43,8 +43,20 @@ sap.ui.define([
                     TimeZone: "CET", 
                     LanguageID: this.getView().byId("spracheInput").getSelectedKey()
                 };
-                
-                this.getView().getModel().update("/AccountAddresses", oInput, {
+
+                //Versuch: zuerst alte Daten löschen und dann neue erstellen (unten) aber Fehler: "Method 'Delete_ENTITY' not implemented in data provider class"
+                /*this.getView().getModel().remove("/AccountAddresses(AccountID='713',AddressID='26837')", {
+                    success: function(data) {
+                     alert("success");
+                    },
+                    error: function(e) {
+                     alert("error");
+                    }
+                   });*/
+
+                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oInput, { //value: "Method 'PATCH_ENTITY' not implemented in data provider class" im Network
+                //this.getView().getModel().update("/AccountAddresses", oInput, { //value: "The specified HTTP method is not allowed for the resource identified by the Data Service Request URI" im Network
+                //this.getView().getModel().create("/AccountAddresses", oInput, { //erstellt eine neue adresse
                     method: "PUT",
                     success: function(data) {
                      alert("success");
@@ -53,6 +65,7 @@ sap.ui.define([
                      alert("error");
                     }
                    });
+
                 this._toggleButtonsAndView(false);
             },
     
