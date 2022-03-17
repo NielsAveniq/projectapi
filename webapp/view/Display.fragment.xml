@@ -22,16 +22,16 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
-				<Label text="{i18n>Stadt}" />
-				<Text id="cityText" text="{AddressInfo/City}" />
-				<Label text="{i18n>StrasseNr}" />
-				<Text text="{AddressInfo/Street} {AddressInfo/HouseNo}" />
-				<Label text="{i18n>PLZ}" />
-				<Text text="{AddressInfo/PostalCode}" />
-				<Label text="{i18n>Land}" />
-				<Text id="landText" text="{AddressInfo/CountryName}" />
-                <Label text="{i18n>Sprache}" />
-				<Text id="spracheText" text="{AddressInfo/LanguageID}" />
+				<Label id="lblStadtD" text="{i18n>Stadt}" />
+				<Text id="cityTextD" text="{AddressInfo/City}" />
+				<Label id="lblStrNrD" text="{i18n>StrasseNr}" />
+				<Text id="strnrTextD" text="{AddressInfo/Street} {AddressInfo/HouseNo}" />
+				<Label id="lblPLZD" text="{i18n>PLZ}" />
+				<Text id="plzTextD" text="{AddressInfo/PostalCode}" />
+				<Label id="lblLandD" text="{i18n>Land}" />
+				<Text id="landTextD" text="{AddressInfo/CountryName}" />
+                <Label id="lblSpracheD" text="{i18n>Sprache}" />
+				<Text id="spracheTextD" text="{AddressInfo/LanguageID}" />
 			</f:content>
 		</f:SimpleForm>
 	</VBox>
