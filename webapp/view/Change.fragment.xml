@@ -25,6 +25,9 @@
 				<Label text="{i18n>Stadt}" />
 				<Input id="stadtInput" value="{AddressInfo/City}" />
 
+                <Label text="{i18n>PLZ}" />
+				<Input id="plzInput" value="{AddressInfo/PostalCode}" />
+
 				<Label text="{i18n>StrasseNr}" />
 				<Input id="strasseInput" value="{AddressInfo/Street}">
 				</Input>
@@ -34,11 +37,14 @@
 					</layoutData>
 				</Input>
 
-				<Label text="{i18n>PLZ}" />
-				<Input id="plzInput" value="{AddressInfo/PostalCode}" />
+				<Label text="{i18n>LandID}" />
+				<Input id="landIDInput" value="{AddressInfo/CountryID}" editable="false" />
 
 				<Label text="{i18n>Land}" />
 				<Input id="landInput" value="{AddressInfo/CountryName}" editable="false" />
+                
+				<Label text="{i18n>Zeitzone}" />
+				<Input id="ZzInput" value="{AddressInfo/TimeZone}" editable="false" />
 
                 <Label text="{i18n>Sprache}" />
 				<Select id="spracheInput" selectedKey="{AddressInfo/LanguageID}">

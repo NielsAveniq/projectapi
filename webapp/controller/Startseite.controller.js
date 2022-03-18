@@ -31,16 +31,16 @@ sap.ui.define([
             },
     
             handleSavePress : function () {
-                var oInput = {};
-                oInput.AccountID = "713";
-                oInput.AddressID = "26837";
-                oInput.AddressInfo = {
+                var oEntry = {};
+                oEntry.AccountID = "713";
+                oEntry.AddressID = "26837";
+                oEntry.AddressInfo = {
                     City: this.getView().byId("stadtInput").getValue(), 
                     PostalCode: this.getView().byId("plzInput").getValue(), 
                     Street: this.getView().byId("strasseInput").getValue(), 
                     HouseNo: this.getView().byId("nrInput").getValue(), 
-                    CountryID: "CH", 
-                    TimeZone: "CET", 
+                    CountryID: this.getView().byId("landIDInput").getValue(), 
+                    TimeZone: this.getView().byId("ZzInput").getValue(), 
                     LanguageID: this.getView().byId("spracheInput").getSelectedKey()
                 };
 
@@ -54,9 +54,9 @@ sap.ui.define([
                     }
                    });*/
 
-                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oInput, { //value: "Method 'PATCH_ENTITY' not implemented in data provider class" im Network
-                //this.getView().getModel().update("/AccountAddresses", oInput, { //value: "The specified HTTP method is not allowed for the resource identified by the Data Service Request URI" im Network
-                //this.getView().getModel().create("/AccountAddresses", oInput, { //erstellt eine neue adresse
+                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oEntry, { //value: "Method 'PATCH_ENTITY' not implemented in data provider class" im Network
+                //this.getView().getModel().update("/AccountAddresses", oEntry, { //value: "The specified HTTP method is not allowed for the resource identified by the Data Service Request URI" im Network
+                //this.getView().getModel().create("/AccountAddresses", oEntry, { //erstellt eine neue adresse
                     method: "PUT",
                     success: function(data) {
                      alert("success");
