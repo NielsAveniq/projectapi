@@ -68,7 +68,8 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {
-            "useBatch": false
+            "useBatch": false,
+            "defaultUpdateMethod": "PUT"
         }
       }
     },

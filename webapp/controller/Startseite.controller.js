@@ -1,6 +1,6 @@
 sap.ui.define([
     'sap/ui/core/Fragment',
-    "sap/ui/core/mvc/Controller", 
+    "sap/ui/core/mvc/Controller",
     'sap/ui/model/json/JSONModel',
     'sap/ui/model/odata/v2/ODataModel',
     'sap/m/MessageToast'
@@ -54,10 +54,7 @@ sap.ui.define([
                     }
                    });*/
 
-                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oEntry, { //value: "Method 'PATCH_ENTITY' not implemented in data provider class" im Network
-                //this.getView().getModel().update("/AccountAddresses", oEntry, { //value: "The specified HTTP method is not allowed for the resource identified by the Data Service Request URI" im Network
-                //this.getView().getModel().create("/AccountAddresses", oEntry, { //erstellt eine neue adresse
-                    method: "PUT",
+                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oEntry, {
                     success: function(data) {
                      alert("success");
                     },
