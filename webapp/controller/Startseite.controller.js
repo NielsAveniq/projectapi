@@ -3,12 +3,13 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     'sap/ui/model/json/JSONModel',
     'sap/ui/model/odata/v2/ODataModel',
-    'sap/m/MessageToast'
+    'sap/m/MessageToast',
+	"sap/m/MessageBox"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Fragment, Controller, JSONModel, ODataModel, MessageToast) {
+    function (Fragment, Controller, JSONModel, ODataModel, MessageToast, MessageBox) {
         "use strict";
 
         return Controller.extend("projectapi.controller.Startseite", {
@@ -27,7 +28,17 @@ sap.ui.define([
             },
     
             handleCancelPress : function () {
-                this._toggleButtonsAndView(false);
+                var that = this;
+                MessageBox.warning("Ihre Änderungen gehen verloren wollen Sie trotzdem weiterfahren?", {
+                    actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+                    emphasizedAction: MessageBox.Action.OK,
+                    onClose: function (sAction) {
+                        if(sAction == "OK"){
+                            that._toggleButtonsAndView(false);
+                        }else{
+                        }
+                    }
+                });
             },
     
             handleSavePress : function () {
