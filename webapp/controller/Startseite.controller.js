@@ -14,7 +14,7 @@ sap.ui.define([
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
                 //Binding
-			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26837')");
+			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
 
 			    this._formFragments = {};
 
@@ -32,8 +32,6 @@ sap.ui.define([
     
             handleSavePress : function () {
                 var oEntry = {};
-                oEntry.AccountID = "713";
-                oEntry.AddressID = "26837";
                 oEntry.AddressInfo = {
                     City: this.getView().byId("stadtInput").getValue(), 
                     PostalCode: this.getView().byId("plzInput").getValue(), 
@@ -44,7 +42,7 @@ sap.ui.define([
                     LanguageID: this.getView().byId("spracheInput").getSelectedKey()
                 };
 
-                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oEntry, {
+                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26505')", oEntry, {
                     success: function(data) {
                      alert("success");
                     },
@@ -67,7 +65,6 @@ sap.ui.define([
                 // Set the right form type
                 this._showFormFragment(bEdit ? "Change" : "Display");
             },
-    
 
             _getFormFragment: function (sFragmentName) {
                 var pFormFragment = this._formFragments[sFragmentName],
