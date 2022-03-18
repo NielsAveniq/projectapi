@@ -44,16 +44,6 @@ sap.ui.define([
                     LanguageID: this.getView().byId("spracheInput").getSelectedKey()
                 };
 
-                //Versuch: zuerst alte Daten löschen und dann neue erstellen (unten) aber Fehler: "Method 'Delete_ENTITY' not implemented in data provider class"
-                /*this.getView().getModel().remove("/AccountAddresses(AccountID='713',AddressID='26837')", {
-                    success: function(data) {
-                     alert("success");
-                    },
-                    error: function(e) {
-                     alert("error");
-                    }
-                   });*/
-
                 this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26837')", oEntry, {
                     success: function(data) {
                      alert("success");
