@@ -32,6 +32,10 @@
 				<Text id="landIDTextD" text="{AddressInfo/CountryID}" />
 				<Label id="lblLandD" text="{i18n>Land}" />
 				<Text id="landTextD" text="{AddressInfo/CountryName}" />
+				<Label id="lblRegionD" text="{i18n>Region}" />
+				<Text id="regionTextD" text="{AddressInfo/Region}" />
+				<Label id="lblRegionNameD" text="{i18n>Region}" />
+				<Text id="regionNameTextD" text="{AddressInfo/RegionName}" />
 				<Label id="lblZzD" text="{i18n>Zeitzone}" />
 				<Text id="ZzTextD" text="{AddressInfo/TimeZone}" />
                 <Label id="lblSpracheD" text="{i18n>Sprache}" />

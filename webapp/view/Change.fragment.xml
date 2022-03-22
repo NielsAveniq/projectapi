@@ -42,6 +42,12 @@
 
 				<Label text="{i18n>Land}" />
 				<Input id="landInput" value="{AddressInfo/CountryName}" editable="false" />
+
+                <Label text="{i18n>Region}" />
+				<Input id="regionInput" value="{AddressInfo/Region}"/>
+
+                <Label text="{i18n>Region}" />
+				<Input id="regionNameInput" value="{AddressInfo/RegionName}" editable="false"/>
                 
 				<Label text="{i18n>Zeitzone}" />
 				<Input id="ZzInput" value="{AddressInfo/TimeZone}" editable="false" />

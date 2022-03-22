@@ -14,6 +14,10 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
+                var oRegionModel = new sap.ui.model.json.JSONModel();
+                oRegionModel.loadData("Region.json");
+
+
                 //Binding
 			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
 
@@ -42,18 +46,33 @@ sap.ui.define([
             },
     
             handleSavePress : function () {
+                var that = this;
                 var oEntry = {};
                 oEntry.AddressInfo = {
-                    City: this.getView().byId("stadtInput").getValue(), 
-                    PostalCode: this.getView().byId("plzInput").getValue(), 
-                    Street: this.getView().byId("strasseInput").getValue(), 
-                    HouseNo: this.getView().byId("nrInput").getValue(), 
-                    CountryID: this.getView().byId("landIDInput").getValue(), 
-                    TimeZone: this.getView().byId("ZzInput").getValue(), 
-                    LanguageID: this.getView().byId("spracheInput").getSelectedKey()
+                    City: that.getView().byId("stadtInput").getValue(), 
+                    PostalCode: that.getView().byId("plzInput").getValue(), 
+                    Street: that.getView().byId("strasseInput").getValue(), 
+                    HouseNo: that.getView().byId("nrInput").getValue(), 
+                    CountryID: that.getView().byId("landIDInput").getValue(), 
+                    Region: that.getView().byId("regionInput").getValue(),
+                    TimeZone: that.getView().byId("ZzInput").getValue(), 
+                    LanguageID: that.getView().byId("spracheInput").getSelectedKey()
                 };
 
-                this.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26505')", oEntry, {
+                /*if(oEntry.AddressInfo.Region != "AG")
+                {
+                    MessageBox.warning("Bitte wählen Sie einen gültigen Kanton", {
+                        actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+                        emphasizedAction: MessageBox.Action.OK,
+                        onClose: function (sAction) {
+                            if(sAction == "OK"){
+                            }else{
+                            }
+                        }
+                    });
+                }
+                else{*/
+                that.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26505')", oEntry, {
                     success: function(data) {
                      alert("success");
                     },
@@ -62,7 +81,8 @@ sap.ui.define([
                     }
                    });
 
-                this._toggleButtonsAndView(false);
+                that._toggleButtonsAndView(false);
+                //}
             },
     
             _toggleButtonsAndView : function (bEdit) {
