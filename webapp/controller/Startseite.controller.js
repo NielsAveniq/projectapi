@@ -14,10 +14,6 @@ sap.ui.define([
 
         return Controller.extend("projectapi.controller.Startseite", {
             onInit: function () {
-                var oRegionModel = new sap.ui.model.json.JSONModel();
-                oRegionModel.loadData("Region.json");
-
-
                 //Binding
 			    this.getView().bindElement("/AccountAddresses(AccountID='713',AddressID='26505')");
 
