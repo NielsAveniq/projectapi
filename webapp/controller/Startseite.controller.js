@@ -54,24 +54,11 @@ sap.ui.define([
                     Street: that.getView().byId("strasseInput").getValue(), 
                     HouseNo: that.getView().byId("nrInput").getValue(), 
                     CountryID: that.getView().byId("landIDInput").getValue(), 
-                    Region: that.getView().byId("regionInput").getValue(),
+                    Region: that.getView().byId("regionInput").getSelectedKey(),
                     TimeZone: that.getView().byId("ZzInput").getValue(), 
                     LanguageID: that.getView().byId("spracheInput").getSelectedKey()
                 };
-
-                /*if(oEntry.AddressInfo.Region != "AG")
-                {
-                    MessageBox.warning("Bitte wählen Sie einen gültigen Kanton", {
-                        actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
-                        emphasizedAction: MessageBox.Action.OK,
-                        onClose: function (sAction) {
-                            if(sAction == "OK"){
-                            }else{
-                            }
-                        }
-                    });
-                }
-                else{*/
+                
                 that.getView().getModel().update("/AccountAddresses(AccountID='713',AddressID='26505')", oEntry, {
                     success: function(data) {
                      alert("success");
@@ -82,7 +69,6 @@ sap.ui.define([
                    });
 
                 that._toggleButtonsAndView(false);
-                //}
             },
     
             _toggleButtonsAndView : function (bEdit) {

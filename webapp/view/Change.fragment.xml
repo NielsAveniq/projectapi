@@ -22,16 +22,16 @@
 			columnsM="1"
 			singleContainerFullSize="false" >
 			<f:content>
-				<Label text="{i18n>Stadt}" />
-				<Input id="stadtInput" value="{AddressInfo/City}" />
+				<Label text="{i18n>Stadt}" required="true"/>
+				<Input id="stadtInput" value="{AddressInfo/City}" required="true"/>
 
-                <Label text="{i18n>PLZ}" />
-				<Input id="plzInput" value="{AddressInfo/PostalCode}" />
+                <Label text="{i18n>PLZ}" required="true"/>
+				<Input id="plzInput" value="{AddressInfo/PostalCode}" required="true"/>
 
-				<Label text="{i18n>StrasseNr}" />
-				<Input id="strasseInput" value="{AddressInfo/Street}">
+				<Label text="{i18n>StrasseNr}" required="true"/>
+				<Input id="strasseInput" value="{AddressInfo/Street}" required="true">
 				</Input>
-				<Input id="nrInput" value="{AddressInfo/HouseNo}">
+				<Input id="nrInput" value="{AddressInfo/HouseNo}" required="true">
 					<layoutData>
 						<l:GridData span="XL1 L2 M2 S4" />
 					</layoutData>
@@ -43,17 +43,24 @@
 				<Label text="{i18n>Land}" />
 				<Input id="landInput" value="{AddressInfo/CountryName}" editable="false" />
 
-                <Label text="{i18n>Region}" />
-				<Input id="regionInput" value="{AddressInfo/Region}"/>
-
-                <Label text="{i18n>Region}" />
-				<Input id="regionNameInput" value="{AddressInfo/RegionName}" editable="false"/>
-                
+                <Label text="{i18n>Region}" required="true"/>
+                <Select id="regionInput" selectedKey="{AddressInfo/Region}" >
+					<items>
+						<core:Item text="{i18n>Aargau}" key="AG"/>
+						<core:Item text="{i18n>Basel-Landschaft}" key="BL"/>
+						<core:Item text="{i18n>Bern}" key="BE"/>
+						<core:Item text="{i18n>Solothurn}" key="SO"/>
+						<core:Item text="{i18n>Luzern}" key="LU"/>
+						<core:Item text="{i18n>Zug}" key="ZG"/>
+						<core:Item text="{i18n>Zürich}" key="ZH"/>
+					</items>
+				</Select>
+                                
 				<Label text="{i18n>Zeitzone}" />
 				<Input id="ZzInput" value="{AddressInfo/TimeZone}" editable="false" />
 
                 <Label text="{i18n>Sprache}" />
-				<Select id="spracheInput" selectedKey="{AddressInfo/LanguageID}">
+				<Select id="spracheInput" selectedKey="{AddressInfo/LanguageID}" >
 					<items>
 						<core:Item text="{i18n>Deutsch}" key="D"/>
 						<core:Item text="{i18n>Englisch}" key="E"/>
